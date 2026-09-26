@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simran weds Parul</title>
+  <meta name="description" content="Wedding invitation — Simran Kapoor & Parul Gupta, 25th November 2026, Jammu" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;600;700&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="public/couple.jpeg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="bg"></canvas>
+
+  <!-- Opening envelope -->
+  <div id="intro">
+    <div class="intro-top">
+      <p class="devta">|| श्री गणेशाय नमः ||</p>
+    </div>
+    <div class="intro-bottom">
+      <p class="guest-line hidden" id="introGuest"></p>
+      <p class="sub">You are cordially invited</p>
+      <button id="openBtn">Open Invitation ✨</button>
+      <p class="hint">or tap the doors</p>
+    </div>
+  </div>
+
+  <div id="flash"></div>
+
+  <main id="main" class="hidden">
+    <section class="ganesh">
+      <div class="om-ring"><span>ॐ</span></div>
+      <p class="g-title">॥ श्री गणेशाय नमः ॥</p>
+      <h3 class="script">Shri Ganesh Vandana</h3>
+      <div class="temple-frame">
+        <div class="bells"><span>🔔</span><span>🔔</span></div>
+        <div id="videoBox" class="video-box">
+          <button id="videoPlay" class="video-poster" aria-label="Play video">
+            <span class="poster-om">ॐ</span>
+            <span class="play-icon">▶</span>
+            <span class="poster-text" id="posterText">Tap to seek Bappa's blessings</span>
+          </button>
+        </div>
+      </div>
+      <p class="g-mantra">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ ।<br />निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥</p>
+      <div class="g-diyas"><span>🪔</span><span>🌺</span><span>🪔</span></div>
+    </section>
+
+    <section class="hero">
+      <div class="top-line"><span>Jai Maa Kheer Bhawani</span><span>Jai Kul Devta</span></div>
+      <p class="guest-line hidden" id="heroGuest"></p>
+      <p class="blessing">With the heavenly blessings of our revered</p>
+      <p class="elders">Late Smt. Shanti Devi &amp; Late Sh. Bal Kapoor <em>(Dadiji &amp; Dadaji)</em></p>
+      <p class="elders">Late Smt. Kaushalya Devi &amp; Late Sh. Charanjeet Sharma <em>(Nani &amp; Nanaji)</em></p>
+      <p class="blessing">solicit your gracious presence &amp; blessings on the auspicious occasion of the marriage ceremony of their beloved grand daughter</p>
+
+      <h2 class="script name">Simran Kapoor</h2>
+      <p class="parents">(D/o Smt. Sapna Kapoor &amp; Sh. Vinod Kapoor)</p>
+      <p class="with">with</p>
+      <h2 class="script name">Parul Gupta</h2>
+      <p class="parents">(S/o Smt. Kanchan Gupta &amp; Sh. Balwinder Gupta)</p>
+
+      <div class="date-badge">25 · 11 · 2026</div>
+    </section>
+
+    <section class="couple-sec reveal">
+      <p class="sub">Two souls · One journey</p>
+      <h2 class="script">The Couple</h2>
+      <div class="couple-stage">
+        <div class="couple-frame" id="coupleFrame">
+          <img src="public/couple.jpeg" alt="Simran and Parul" loading="lazy" />
+          <div class="shine"></div>
+          <span class="corner tl">❀</span><span class="corner tr">❀</span>
+          <span class="corner bl">❀</span><span class="corner br">❀</span>
+        </div>
+      </div>
+      <div class="couple-names">
+        <span class="script">Simran</span><span class="amp">&amp;</span><span class="script">Parul</span>
+      </div>
+      <p class="couple-quote">“Do dil, ek dhadkan — saat pheron ka saath, saat janmon ka vaada.”</p>
+    </section>
+
+    <section class="countdown-sec reveal">
+      <h3 class="script">Counting down to forever</h3>
+      <div id="countdown">
+        <div><span id="d">0</span><small>Days</small></div>
+        <div><span id="h">0</span><small>Hours</small></div>
+        <div><span id="m">0</span><small>Minutes</small></div>
+        <div><span id="s">0</span><small>Seconds</small></div>
+      </div>
+      <div class="cal-btns">
+        <button id="icsBtn" class="gold-btn">📅 Save the Date (all events)</button>
+        <a class="gold-btn outline" target="_blank" rel="noopener"
+           href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Simran+%26+Parul+-+Reception+of+Barat&dates=20261125T143000Z/20261125T180000Z&location=Dev+Banquet+Hall,+Domana,+Jammu&details=Wedding+of+Simran+Kapoor+%26+Parul+Gupta">Add to Google Calendar</a>
+      </div>
+    </section>
+
+    <section class="events reveal">
+      <h3 class="script title">Golden Moments</h3>
+      <div class="cards">
+        <article class="card">
+          <div class="icon">🪔</div>
+          <h4>Satsang</h4>
+          <p class="when">Monday, 23rd November 2026</p>
+          <p class="time">12:00 PM</p>
+          <p class="where">Aggarwal Sabha, Gummat, Jammu</p>
+          <a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Aggarwal+Sabha+Gummat+Jammu">📍 View Map</a>
+        </article>
+        <article class="card">
+          <div class="icon">🌿</div>
+          <h4>Mehandi</h4>
+          <p class="when">Tuesday, 24th November 2026</p>
+          <p class="time">8:00 PM</p>
+          <p class="where">Aggarwal Sabha, Gummat, Jammu</p>
+          <a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Aggarwal+Sabha+Gummat+Jammu">📍 View Map</a>
+        </article>
+        <article class="card">
+          <div class="icon">🌼</div>
+          <h4>Saant</h4>
+          <p class="when">Wednesday, 25th November 2026</p>
+          <p class="time">7:00 AM</p>
+          <p class="where">Aggarwal Sabha, Gummat, Jammu</p>
+          <a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Aggarwal+Sabha+Gummat+Jammu">📍 View Map</a>
+        </article>
+        <article class="card highlight">
+          <div class="icon">🐎</div>
+          <h4>Reception of Barat</h4>
+          <p class="when">Wednesday, 25th November 2026</p>
+          <p class="time">8:00 PM</p>
+          <p class="where">Dev Banquet Hall, Domana</p>
+          <a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Dev+Banquet+Hall+Domana+Jammu">📍 View Map</a>
+          <button id="celebrateBtn" class="gold-btn small">🎆 Celebrate</button>
+        </article>
+      </div>
+      <p class="dinner">Kindly stay for Dinner after the Reception of Barat</p>
+    </section>
+
+    <section class="rsvp reveal">
+      <h3 class="script title">R.S.V.P</h3>
+      <p class="nd">Nanke &amp; Dadke</p>
+      <div class="phones">
+        <a href="tel:+919622519800">📞 96225 19800</a>
+        <a href="tel:+919622912137">📞 96229 12137</a>
+      </div>
+      <p class="compliments">With best compliments from</p>
+      <p class="script from">Er. Ankit Kapoor</p>
+    </section>
+
+    <footer>Made with ❤️ for Simran didi</footer>
+  </main>
+
+  <button id="musicBtn" class="hidden" title="Toggle music">🎵</button>
+
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }
+  </script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
