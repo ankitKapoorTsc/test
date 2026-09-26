@@ -586,7 +586,27 @@ function videoEmbed(url) {
   return { type: 'video', src: url };
 }
 
-document.getElementById('videoPlay').addEventListener('click', () => {
+// Ganesh ji photo shown before the video starts and after it ends
+const GANESH_IMG = 'https://images.unsplash.com/photo-1607604760190-ec9ccc12156e?q=80&w=774&auto=format&fit=crop';
+const ganeshImg = new Image();
+ganeshImg.onload = () => {
+  document.getElementById('videoPlay').style.setProperty('--gimg', `url("${GANESH_IMG}")`);
+  document.getElementById('videoPlay').classList.add('has-img');
+};
+ganeshImg.src = GANESH_IMG;
+
+function showEndScreen(onReplay) {
+  const end = document.createElement('div');
+  end.className = 'video-end';
+  if (ganeshImg.complete && ganeshImg.naturalWidth) end.style.setProperty('--gimg', `url("${GANESH_IMG}")`);
+  end.innerHTML = `<span class="end-om">ॐ</span>
+    <p class="end-text">॥ गणपति बप्पा मोरया ॥</p>
+    <button class="gold-btn small">↻ Replay</button>`;
+  end.querySelector('button').addEventListener('click', () => { end.remove(); onReplay(); });
+  videoBox.appendChild(end);
+}
+
+function playGaneshVideo() {
   if (!GANESH_VIDEO_URL) return;
   // pause background music so the video's audio is heard
   const wasPlaying = !music.paused;
@@ -599,11 +619,14 @@ document.getElementById('videoPlay').addEventListener('click', () => {
   } else {
     el = Object.assign(document.createElement('video'), { src, controls: true, autoplay: true, playsInline: true });
     el.addEventListener('ended', () => {
+      if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
       if (wasPlaying) music.play().then(() => musicBtn.classList.add('playing')).catch(() => {});
+      showEndScreen(() => { el.currentTime = 0; el.play(); });
     });
   }
   videoBox.replaceChildren(el);
-});
+}
+document.getElementById('videoPlay').addEventListener('click', playGaneshVideo);
 
 // ---------- Couple photo: 3D tilt + shine ----------
 const frame = document.getElementById('coupleFrame');
